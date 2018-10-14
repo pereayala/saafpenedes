@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAAF - On som?</title>
+<link rel="shortcut icon" href="images/saafLogo.jpg" type="image/ico"/>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/flexslider.css">
+<link rel="stylesheet" href="css/jquery.fancybox.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" href="css/font-icon.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bitter" /> <!-- Font Bitter -->
+</head>
+
+<body>
+<!-- header section -->
+<section class="banner" role="banner">
+<!--header navigation -->
+  <header id="header">
+    <div class="header-content clearfix"> <a class="logo" href="index.html"><img src="images/back1.png" alt=""></a>
+      <nav class="navigation" role="navigation">
+        <ul class="primary-nav">
+          <li><a href="equip.html">Equip professional</a></li>
+          <li><a href="onsom.html">On som?</a></li>
+          <li><a href="contact.html">Contacta amb nosaltres</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="nav-toggle">Menu<span></span></a> </div>
+  </header>
+  <!--header navigation -->
+</section>
+<!-- header section --> 
+<!-- title section -->
+<section id="banner" class="banner no-padding">
+  <div class="container-fluid">
+    <div class="row no-gutter">
+      <ul class="slides">
+        <li>
+          <div class="col-md-12">
+            <blockquote>
+              <p>On ens pots trobar?</p>
+            </blockquote>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- title section --> 
+<!-- About section -->
+<section id="onsom" class="section teams">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 col-sm-5">
+        <div class="bio" style="padding-bottom: 2em"> <img src="images/espai.jpg" alt="" class="img-responsive"> </div>
+      </div>
+      <div class="col-md-7 col-sm-7" style="padding-bottom: 4em">
+        <div class="bio">
+          <div class="bio-content">
+            <h5 style="font-size: 1.5em; font-family: 'Bitter'; padding-top: 1em">Ens pots trobar a Vilafranca, al carrer Tossa de Mar, 11, 2on, 2ª (barri Poble Nou).</h5>
+
+            <p style="padding-top: 1em">Tenim un espai agradable, tranquil i càlid. Perquè pensem que la qualitat de l’espai on atenem és important de cara a oferir un millor servei. El centre està homologat com a Centre Sanitari per la Generalitat de Catalunya.</p>
+          </div>
+        </div>
+      </div>
+      <!-- MAPA -->
+      <div id="map" style="height: 400px; width: 100%;">
+      </div>
+      <!-- MAPA -->
+    </div>
+  </div>
+</section>
+<!-- About section --> 
+<!-- footer -->
+<footer class="section footer no-padding">
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="col-md-12">
+        <p>
+        <ul class="footer-share">
+          <li><a target="_blank" href="https://www.facebook.com/saafpenedes/"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a target="_blank" href="https://twitter.com/atenciofamiliar"><i class="fab fa-twitter"></i></a></li>
+        </ul>
+        </p>
+        <p>© Copyright 2018&nbsp; | &nbsp;SAAF PENEDÈS |&nbsp;Servei d'Atenció i Assessorament Familiar</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- footer -->
+<!-- JS FILES --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/jquery.flexslider-min.js"></script> 
+<script src="js/jquery.fancybox.pack.js"></script> 
+<script src="js/jquery.waypoints.min.js"></script> 
+<script src="js/retina.min.js"></script> 
+<script src="js/modernizr.js"></script> 
+<script src="js/main.js"></script>
+
+    <script>
+      var map;
+      function initMap() {
+        var Vilafranca = {lat: 41.340723, lng: 1.696478};
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: {lat: 41.340723, lng: 1.696478}
+          });
+
+          //Info windows + marker
+          var contentString = '<div style="color: black" id="content">'+
+          '<div id="siteNotice">'+
+          '</div>'+
+          '<h3 id="firstHeading" class="firstHeading">SAAF Penedès</h3>'+
+          '<div id="bodyContent">'+
+          '<p>Ens trobaràs al carrer Tossa de Mar, 11, 2on, 2ª (barri Poble Nou), '+ 
+          'Vilafranca del Penedés.</p> '+ 
+          '<p>Horari de atenció   '+
+          'al client: 9-14h de dilluns a divendres. Per a més    '+
+          'informació trucan\'s al 93 123 555.</p> '+
+          "<p>Pàgina web SAAF, "+ 
+          '<a href="http://www.ssaf.org/">'+
+          'http://www.saaf.org/</a></p>'+
+          '</div>';
+      
+          var infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+
+          var marker = new google.maps.Marker({
+            position: Vilafranca,
+            map: map,
+            title: 'SAAF'
+          });
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrDFzKhRCirIhFH0qdf-nWXb1CmhgRzro&callback=initMap"
+        async defer></script>
+    <!-- PROVA MAPA -->
+
+</body>
+</html>
